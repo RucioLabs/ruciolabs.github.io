@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RUCIOLABS Portfolio</title>
+	<style>
+		:root {
+			--bg: #181a20;
+			--card: #23262f;
+			--accent: #6c8cff;
+			--text: #f4f4f4;
+			--muted: #a0a0a0;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+			background: var(--bg);
+			color: var(--text);
+			font-family: 'Segoe UI', 'Pretendard', Arial, sans-serif;
+			min-height: 100vh;
+		}
+		header {
+			padding: 2rem 0 1rem 0;
+			text-align: center;
+		}
+		.logo {
+			font-size: 2.2rem;
+			font-weight: bold;
+			letter-spacing: 2px;
+			color: var(--accent);
+		}
+		.subtitle {
+			color: var(--muted);
+			font-size: 1.1rem;
+			margin-top: 0.5rem;
+		}
+		main {
+			max-width: 700px;
+			margin: 2rem auto;
+			padding: 2rem;
+			background: var(--card);
+			border-radius: 18px;
+			box-shadow: 0 2px 16px 0 #0004;
+		}
+		section {
+			margin-bottom: 2.5rem;
+		}
+		h2 {
+			color: var(--accent);
+			font-size: 1.3rem;
+			margin-bottom: 1rem;
+		}
+		ul.portfolio {
+			list-style: none;
+			padding: 0;
+		}
+		.portfolio li {
+			background: #22242c;
+			margin-bottom: 1rem;
+			border-radius: 10px;
+			transition: background 0.2s;
+			overflow: hidden;
+		}
+		.accordion-title {
+			width: 100%;
+			background: none;
+			border: none;
+			color: var(--text);
+			font-size: 1.05rem;
+			text-align: left;
+			padding: 1rem 1.2rem;
+			cursor: pointer;
+			outline: none;
+			font-family: inherit;
+			transition: background 0.2s;
+		}
+		.accordion-title:hover, .accordion-title.active {
+			background: #2a2d38;
+		}
+		.accordion-content {
+			max-height: 0;
+			overflow: hidden;
+			background: #23262f;
+			color: var(--muted);
+			padding: 0 1.2rem;
+			font-size: 0.98rem;
+			transition: max-height 0.3s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+		}
+		.accordion-content.open {
+			padding: 0.8rem 1.2rem 1.2rem 1.2rem;
+			max-height: 200px;
+		}
+		ul.portfolio li {
+			background: #22242c;
+			margin-bottom: 1rem;
+			padding: 1rem 1.2rem;
+			border-radius: 10px;
+			transition: background 0.2s;
+		}
+		ul.portfolio li:hover {
+			background: #2a2d38;
+		}
+		.contact {
+			display: flex;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+		}
+		.contact a {
+			color: var(--accent);
+			text-decoration: none;
+			font-weight: 500;
+		}
+		.contact a:hover {
+			text-decoration: underline;
+		}
+		@media (max-width: 600px) {
+			main {
+				padding: 1rem;
+			}
+		}
+		.customer-logos {
+			display: flex;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			margin-top: 1.2rem;
+		}
+		.logo-placeholder {
+			width: 70px;
+			height: 70px;
+			background: #fff;
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 1px 6px 0 #0002;
+			font-size: 0.9rem;
+			color: #888;
+			border: 1.5px solid #333a;
+		}
+		footer {
+			width: 100%;
+			background: #181a20;
+			color: #888;
+			text-align: center;
+			padding: 1.5rem 0 1.2rem 0;
+			font-size: 0.98rem;
+			letter-spacing: 0.5px;
+		}
+		.copyright {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">RUCIOLABS</div>
+		<div class="subtitle">빠르고 효율적인 IT 솔루션 파트너</div>
+	</header>
+	<main>
+		<section>
+			<h2>about RUCIOLABS</h2>
+			<p>RUCIOLABS는 CI/CD 자동화 솔루션 전문기업입니다. <br>보다 더 많은 기업들이 더 적은 노력으로 더 많은 가치를 창출할 수 있도록 도와드립니다.<br>
+			기업의 환경과 용도에 맞는 맞춤형 솔루션으로 빠르게 생산성을 높여보세요!</p>
+		</section>
+		<section>
+			<h2>Case Study</h2>
+			<ul class="portfolio">
+				<li>
+					<button class="accordion-title">Hybrid CI/CD 구축</button>
+					<div class="accordion-content">
+						AWS EC2/ECS/S3 활용 빌드배포 파이프라인구축<br>
+						주요기능: Cloud 기반 CI 노드 확장성 확보, 배포자동화
+					</div>
+				</li>
+				<li>
+					<button class="accordion-title">긴급 빌드배포 장애대응</button>
+					<div class="accordion-content">
+						고객사 빌드배포시스템 장애 발생시<br>
+						원격지원을 통한 상태분석, 장애해결, 작업상세내역서 제공
+					</div>
+				</li>
+				<li>
+					<button class="accordion-title">온프레미스 웹 및 대시보드 구성</button>
+					<div class="accordion-content">
+						고객사 내부 필요 메트릭 가시화<br>
+						커스텀 웹 및 API 자동화, 대시보드 제작
+					</div>
+				</li>
+			</ul>
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelectorAll('.accordion-title').forEach(function(btn) {
+		btn.addEventListener('click', function() {
+			const content = btn.nextElementSibling;
+			const isOpen = content.classList.contains('open');
+			document.querySelectorAll('.accordion-content').forEach(function(c) {
+				c.classList.remove('open');
+			});
+			document.querySelectorAll('.accordion-title').forEach(function(b) {
+				b.classList.remove('active');
+			});
+			if (!isOpen) {
+				content.classList.add('open');
+				btn.classList.add('active');
+			}
+		});
+	});
+});
+</script>
+		</section>
+		<section>
+			<h2>Contact Us</h2>
+			<div class="contact">
+				<span>이메일: <a href="mailto:ruciolabs@outlook.com">ruciolabs@outlook.com</a></span>
+				<span>유선연락: <a href="tel:01023708473">010-2370-8473</a></span>
+				<span>홈페이지: <a href="https://www.ruciolabs.com" target="_blank" rel="noopener">www.ruciolabs.com</a></span>
+		</div>
+	</section>
+	<section>
+		<h2>Customers</h2>
+		<div class="customer-logos">
+			<div class="logo-placeholder"><img src="img/sonoseason-logo.png" alt="Sonoseason Logo" style="max-width:60px; max-height:60px;"></div>
+			<div class="logo-placeholder"><img src="img/doosan-logo.png" alt="Doosan Logo" style="max-width:60px; max-height:60px;"></div>
+			<div class="logo-placeholder"><img src="img/3rdman-logo.png" alt="3rdman Logo" style="max-width:60px; max-height:60px;"></div>
+			<div class="logo-placeholder"><img src="img/sbridge-logo.jpg" alt="SBridge Logo" style="max-width:60px; max-height:60px;"></div>
+			<!-- 필요시 더 추가 -->
+		</div>
+	</section>
+	</main>
+		<footer>
+			<div class="copyright">COPYRIGHT(C) 2025 RUCIOLABS Inc. ALL RIGHTS RESERVED</div>
+		</footer>
+</body>
+</html>
